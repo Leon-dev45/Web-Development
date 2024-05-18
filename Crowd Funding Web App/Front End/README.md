@@ -29,7 +29,7 @@ npm install
 
    - Navigate to the `context` folder in src.
    - Open the `index.jsx` file.
-   - Update the wallet address and thirdweb client key variables with your own values.
+   - Update the WALLET_ADDRESS and THIRDWEB_CLIENT_KEY variables with your own values.
      
 ## Running the Project
 
