@@ -7,6 +7,7 @@ Welcome to our crowdfunding web application repository! This application allows 
 To start the project you will require 2 things:
  - Your wallet address.
  - Your Third web Accounts client id.
+   
 The wallet address will be given on the wallet that you created, below your account. And the third web accounts client id will be found when you login and create a project on the thirdweb.
 
 ## Getting Started
