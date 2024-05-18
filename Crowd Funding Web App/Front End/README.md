@@ -1,6 +1,13 @@
 # Crowdfunding Web App
 
-Welcome to our crowdfunding web application repository! This application allows users to create and participate in crowdfunding campaigns for various projects.
+Welcome to our crowdfunding web application repository! This application allows users to create and participate in crowdfunding campaigns for various projects. It involves blockchain at the backend for secure and anonymous transactions.
+
+## Requirements
+
+To start the project you will require 2 things:
+ - Your wallet address.
+ - Your Third web Accounts client id.
+The wallet address will be given on the wallet that you created, below your account. And the third web accounts client id will be found when you login and create a project on the thirdweb.
 
 ## Getting Started
 
