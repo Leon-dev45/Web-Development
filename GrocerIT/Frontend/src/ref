@@ -1,0 +1,650 @@
+import { useState } from 'react';
+import './App.css';
+import bgv from './assets/bgv.mp4'
+function App() {
+
+  return (
+    <div className="w-full font-sans">
+
+      <nav className=" h-[18dvh] w-full box-border sticky top-0 z-[3] text-white ">
+
+        <div id="nav1" className="flex justify-between px-[3%] items-center h-[11dvh]">
+          <a href="/" className=" text-3xl font-semibold">MHSSCE SP</a>
+
+          <form action="" className="flex h-[55%] w-[30%] border border-solid border-gray-300 overflow-hidden rounded opacity-0 pointer-events-none">
+            <input type="text" className="w-[87%] outline-none px-[1vw] font-semibold placeholder:text-gray-400" placeholder="What are you looking for?" />
+            <button type="submit" className="bg-black h-full w-[13%] flex items-center justify-center "><img src="./assets/sw.svg" alt="" className="h-[60%]"/></button>
+          </form>
+
+          <div className="font-medium text-lg w-4/12 flex justify-between items-center">
+            <a href="/">Explore</a>
+            <a href="/">Become a Seller</a>
+            <a href="/">Sign in</a>
+            <button className="border border-solid border-[#1dbf73] text-[#1dbf73] px-[1.1vw] py-[0.7dvh] rounded hover:bg-[#1dbf73] hover:text-white transition-all duration-300" >Join</button>
+          </div>
+        </div>
+
+        {/* <div id='nav2' className="flex box-border items-center text-gray-600 px-[3%] space-x-[1.5%]  h-[7dvh] w-full text-lg font-medium border-y-[0.4dvh] border-gray-300 bg-white opacity-0 z-[-7]">
+
+          <a href="/" className="hover:text-black flex items-center box-border border-b-[3px] border-b-white hover:border-b-[#1dbf73] h-full [&:hover+div]:block">App Development</a>
+          <div className="absolute top-[18dvh] bg-white hidden hover:block">
+            <div className="font-sans grid grid-cols-6 justify-items-center text-gray-600 font-medium py-[3dvh]">
+              <div className="inline-grid grid-cols-1 gap-1 ">
+                <div className="font-semibold text-black mb-2 text-xl">Smartphones</div>
+                <a href="/" className="">OPPO Find N2 Flip</a>
+                <a href="/" className="">OPPO Reno8 T 5G</a>
+                <a href="/" className="">OPPO Reno8 Pro 5G</a>
+                <a href="/" className="">OPPO Reno8 5G</a>
+                <a href="/" className="">OPPO F23 5G</a>
+                <a href="/" className="">OPPO F21s Pro 5G</a>
+                <a href="/" className="">OPPO F21s Pro</a>
+                <a href="/" className="">See All Smartphones</a>
+              </div>
+              <div className="inline-grid grid-cols-1 gap-1">
+                <div className="font-semibold text-black mb-2 text-xl">IoT Products</div>
+                <a href="/" className="">OPPO Pad Air</a>
+                <a href="/" className="">OPPO Enco Air3</a>
+                <a href="/" className="">OPPO Enco Buds2</a>
+                <a href="/" className="">OPPO Enco X2</a>
+                <a href="/" className="">OPPO Enco Air2 Pro</a>
+                <a href="/" className="">OPPO Enco Air2</a>
+                <a href="/" className="">OPPO Watch Free</a>
+                <a href="/" className="">OPPO Band Style</a>
+              </div>
+              <div className="inline-grid grid-cols-1 gap-1 auto-rows-min">
+                <div className="font-semibold text-black mb-2 text-xl">Special Offers</div>
+                <a href="/" className="">Education Discount</a>
+                <a href="/" className="">Strike a Bargain</a>
+
+              </div>
+              <div className="inline-grid grid-cols-1 gap-1">
+                <div className="font-semibold text-black mb-2 text-xl">Support</div>
+                <a href="/" className="">Contact Us</a>
+                <a href="/" className="">Service Center</a>
+                <a href="/" className="">OPPO Update</a>
+                <a href="/" className="">Terms and Conditions</a>
+                <a href="/" className="">E-waste Management</a>
+                <a href="/" className="">Security Response Center</a>
+                <a href="/" className="">Warranty Policy</a>
+                <a href="/" className="">Investor</a>
+              </div>
+              <div className="inline-grid grid-cols-1 gap-1 auto-rows-min">
+                <div className="font-semibold text-black mb-2 text-xl">About OPPO</div>
+                <a href="/" className="">Our Story</a>
+                <a href="/" className="">Technology</a>
+                <a href="/" className="">Newsroom</a>
+                <a href="/" className="">Campaign</a>
+                <a href="/" className="">Career</a>
+                <a href="/" className="">ColorOS</a>
+                <a href="/" className="">Store Locator</a>
+              </div>
+              <div className="inline-grid grid-cols-1 gap-1 auto-rows-min">
+                <div className="font-semibold text-black mb-2 text-xl">OPPO Community</div>
+                <a href="/" className="">OPPO Community</a>
+              </div>
+            </div>
+          </div>
+
+          <a href="/" className="hover:text-black flex items-center box-border border-b-[3px] border-b-white hover:border-b-[#1dbf73] h-full [&:hover+div]:block">Web Development</a>
+          <div className="absolute top-[18dvh] bg-white hidden hover:block">
+            <div className="font-sans grid grid-cols-6 justify-items-center text-gray-600 font-medium py-[3dvh]">
+              <div className="inline-grid grid-cols-1 gap-1 ">
+                <div className="font-semibold text-black mb-2 text-xl">Smartphones</div>
+                <a href="/" className="">OPPO Find N2 Flip</a>
+                <a href="/" className="">OPPO Reno8 T 5G</a>
+                <a href="/" className="">OPPO Reno8 Pro 5G</a>
+                <a href="/" className="">OPPO Reno8 5G</a>
+                <a href="/" className="">OPPO F23 5G</a>
+                <a href="/" className="">OPPO F21s Pro 5G</a>
+                <a href="/" className="">OPPO F21s Pro</a>
+                <a href="/" className="">See All Smartphones</a>
+              </div>
+              <div className="inline-grid grid-cols-1 gap-1">
+                <div className="font-semibold text-black mb-2 text-xl">IoT Products</div>
+                <a href="/" className="">OPPO Pad Air</a>
+                <a href="/" className="">OPPO Enco Air3</a>
+                <a href="/" className="">OPPO Enco Buds2</a>
+                <a href="/" className="">OPPO Enco X2</a>
+                <a href="/" className="">OPPO Enco Air2 Pro</a>
+                <a href="/" className="">OPPO Enco Air2</a>
+                <a href="/" className="">OPPO Watch Free</a>
+                <a href="/" className="">OPPO Band Style</a>
+              </div>
+              <div className="inline-grid grid-cols-1 gap-1 auto-rows-min">
+                <div className="font-semibold text-black mb-2 text-xl">Special Offers</div>
+                <a href="/" className="">Education Discount</a>
+                <a href="/" className="">Strike a Bargain</a>
+
+              </div>
+              <div className="inline-grid grid-cols-1 gap-1">
+                <div className="font-semibold text-black mb-2 text-xl">Support</div>
+                <a href="/" className="">Contact Us</a>
+                <a href="/" className="">Service Center</a>
+                <a href="/" className="">OPPO Update</a>
+                <a href="/" className="">Terms and Conditions</a>
+                <a href="/" className="">E-waste Management</a>
+                <a href="/" className="">Security Response Center</a>
+                <a href="/" className="">Warranty Policy</a>
+                <a href="/" className="">Investor</a>
+              </div>
+              <div className="inline-grid grid-cols-1 gap-1 auto-rows-min">
+                <div className="font-semibold text-black mb-2 text-xl">About OPPO</div>
+                <a href="/" className="">Our Story</a>
+                <a href="/" className="">Technology</a>
+                <a href="/" className="">Newsroom</a>
+                <a href="/" className="">Campaign</a>
+                <a href="/" className="">Career</a>
+                <a href="/" className="">ColorOS</a>
+                <a href="/" className="">Store Locator</a>
+              </div>
+              <div className="inline-grid grid-cols-1 gap-1 auto-rows-min">
+                <div className="font-semibold text-black mb-2 text-xl">OPPO Community</div>
+                <a href="/" className="">OPPO Community</a>
+              </div>
+            </div>
+          </div>
+
+          <a href="/" className="hover:text-black flex items-center box-border border-b-[3px] border-b-white hover:border-b-[#1dbf73] h-full [&:hover+div]:block">SEO</a>
+          <div className="absolute top-[18dvh] bg-white hidden hover:block">
+            <div className="font-sans grid grid-cols-6 justify-items-center text-gray-600 font-medium py-[3dvh]">
+              <div className="inline-grid grid-cols-1 gap-1 ">
+                <div className="font-semibold text-black mb-2 text-xl">Smartphones</div>
+                <a href="/" className="">OPPO Find N2 Flip</a>
+                <a href="/" className="">OPPO Reno8 T 5G</a>
+                <a href="/" className="">OPPO Reno8 Pro 5G</a>
+                <a href="/" className="">OPPO Reno8 5G</a>
+                <a href="/" className="">OPPO F23 5G</a>
+                <a href="/" className="">OPPO F21s Pro 5G</a>
+                <a href="/" className="">OPPO F21s Pro</a>
+                <a href="/" className="">See All Smartphones</a>
+              </div>
+              <div className="inline-grid grid-cols-1 gap-1">
+                <div className="font-semibold text-black mb-2 text-xl">IoT Products</div>
+                <a href="/" className="">OPPO Pad Air</a>
+                <a href="/" className="">OPPO Enco Air3</a>
+                <a href="/" className="">OPPO Enco Buds2</a>
+                <a href="/" className="">OPPO Enco X2</a>
+                <a href="/" className="">OPPO Enco Air2 Pro</a>
+                <a href="/" className="">OPPO Enco Air2</a>
+                <a href="/" className="">OPPO Watch Free</a>
+                <a href="/" className="">OPPO Band Style</a>
+              </div>
+              <div className="inline-grid grid-cols-1 gap-1 auto-rows-min">
+                <div className="font-semibold text-black mb-2 text-xl">Special Offers</div>
+                <a href="/" className="">Education Discount</a>
+                <a href="/" className="">Strike a Bargain</a>
+
+              </div>
+              <div className="inline-grid grid-cols-1 gap-1">
+                <div className="font-semibold text-black mb-2 text-xl">Support</div>
+                <a href="/" className="">Contact Us</a>
+                <a href="/" className="">Service Center</a>
+                <a href="/" className="">OPPO Update</a>
+                <a href="/" className="">Terms and Conditions</a>
+                <a href="/" className="">E-waste Management</a>
+                <a href="/" className="">Security Response Center</a>
+                <a href="/" className="">Warranty Policy</a>
+                <a href="/" className="">Investor</a>
+              </div>
+              <div className="inline-grid grid-cols-1 gap-1 auto-rows-min">
+                <div className="font-semibold text-black mb-2 text-xl">About OPPO</div>
+                <a href="/" className="">Our Story</a>
+                <a href="/" className="">Technology</a>
+                <a href="/" className="">Newsroom</a>
+                <a href="/" className="">Campaign</a>
+                <a href="/" className="">Career</a>
+                <a href="/" className="">ColorOS</a>
+                <a href="/" className="">Store Locator</a>
+              </div>
+              <div className="inline-grid grid-cols-1 gap-1 auto-rows-min">
+                <div className="font-semibold text-black mb-2 text-xl">OPPO Community</div>
+                <a href="/" className="">OPPO Community</a>
+              </div>
+            </div>
+          </div>
+
+          <a href="/" className="hover:text-black flex items-center box-border border-b-[3px] border-b-white hover:border-b-[#1dbf73] h-full [&:hover+div]:block">Digital Maketing</a>
+          <div className="absolute top-[18dvh] bg-white hidden hover:block">
+            <div className="font-sans grid grid-cols-6 justify-items-center text-gray-600 font-medium py-[3dvh]">
+              <div className="inline-grid grid-cols-1 gap-1 ">
+                <div className="font-semibold text-black mb-2 text-xl">Smartphones</div>
+                <a href="/" className="">OPPO Find N2 Flip</a>
+                <a href="/" className="">OPPO Reno8 T 5G</a>
+                <a href="/" className="">OPPO Reno8 Pro 5G</a>
+                <a href="/" className="">OPPO Reno8 5G</a>
+                <a href="/" className="">OPPO F23 5G</a>
+                <a href="/" className="">OPPO F21s Pro 5G</a>
+                <a href="/" className="">OPPO F21s Pro</a>
+                <a href="/" className="">See All Smartphones</a>
+              </div>
+              <div className="inline-grid grid-cols-1 gap-1">
+                <div className="font-semibold text-black mb-2 text-xl">IoT Products</div>
+                <a href="/" className="">OPPO Pad Air</a>
+                <a href="/" className="">OPPO Enco Air3</a>
+                <a href="/" className="">OPPO Enco Buds2</a>
+                <a href="/" className="">OPPO Enco X2</a>
+                <a href="/" className="">OPPO Enco Air2 Pro</a>
+                <a href="/" className="">OPPO Enco Air2</a>
+                <a href="/" className="">OPPO Watch Free</a>
+                <a href="/" className="">OPPO Band Style</a>
+              </div>
+              <div className="inline-grid grid-cols-1 gap-1 auto-rows-min">
+                <div className="font-semibold text-black mb-2 text-xl">Special Offers</div>
+                <a href="/" className="">Education Discount</a>
+                <a href="/" className="">Strike a Bargain</a>
+
+              </div>
+              <div className="inline-grid grid-cols-1 gap-1">
+                <div className="font-semibold text-black mb-2 text-xl">Support</div>
+                <a href="/" className="">Contact Us</a>
+                <a href="/" className="">Service Center</a>
+                <a href="/" className="">OPPO Update</a>
+                <a href="/" className="">Terms and Conditions</a>
+                <a href="/" className="">E-waste Management</a>
+                <a href="/" className="">Security Response Center</a>
+                <a href="/" className="">Warranty Policy</a>
+                <a href="/" className="">Investor</a>
+              </div>
+              <div className="inline-grid grid-cols-1 gap-1 auto-rows-min">
+                <div className="font-semibold text-black mb-2 text-xl">About OPPO</div>
+                <a href="/" className="">Our Story</a>
+                <a href="/" className="">Technology</a>
+                <a href="/" className="">Newsroom</a>
+                <a href="/" className="">Campaign</a>
+                <a href="/" className="">Career</a>
+                <a href="/" className="">ColorOS</a>
+                <a href="/" className="">Store Locator</a>
+              </div>
+              <div className="inline-grid grid-cols-1 gap-1 auto-rows-min">
+                <div className="font-semibold text-black mb-2 text-xl">OPPO Community</div>
+                <a href="/" className="">OPPO Community</a>
+              </div>
+            </div>
+          </div>
+
+          <a href="/" className="hover:text-black flex items-center box-border border-b-[3px] border-b-white hover:border-b-[#1dbf73] h-full [&:hover+div]:block">Graphics Designer</a>
+          <div className="absolute top-[18dvh] bg-white hidden hover:block">
+            <div className="font-sans grid grid-cols-6 justify-items-center text-gray-600 font-medium py-[3dvh]">
+              <div className="inline-grid grid-cols-1 gap-1 ">
+                <div className="font-semibold text-black mb-2 text-xl">Smartphones</div>
+                <a href="/" className="">OPPO Find N2 Flip</a>
+                <a href="/" className="">OPPO Reno8 T 5G</a>
+                <a href="/" className="">OPPO Reno8 Pro 5G</a>
+                <a href="/" className="">OPPO Reno8 5G</a>
+                <a href="/" className="">OPPO F23 5G</a>
+                <a href="/" className="">OPPO F21s Pro 5G</a>
+                <a href="/" className="">OPPO F21s Pro</a>
+                <a href="/" className="">See All Smartphones</a>
+              </div>
+              <div className="inline-grid grid-cols-1 gap-1">
+                <div className="font-semibold text-black mb-2 text-xl">IoT Products</div>
+                <a href="/" className="">OPPO Pad Air</a>
+                <a href="/" className="">OPPO Enco Air3</a>
+                <a href="/" className="">OPPO Enco Buds2</a>
+                <a href="/" className="">OPPO Enco X2</a>
+                <a href="/" className="">OPPO Enco Air2 Pro</a>
+                <a href="/" className="">OPPO Enco Air2</a>
+                <a href="/" className="">OPPO Watch Free</a>
+                <a href="/" className="">OPPO Band Style</a>
+              </div>
+              <div className="inline-grid grid-cols-1 gap-1 auto-rows-min">
+                <div className="font-semibold text-black mb-2 text-xl">Special Offers</div>
+                <a href="/" className="">Education Discount</a>
+                <a href="/" className="">Strike a Bargain</a>
+
+              </div>
+              <div className="inline-grid grid-cols-1 gap-1">
+                <div className="font-semibold text-black mb-2 text-xl">Support</div>
+                <a href="/" className="">Contact Us</a>
+                <a href="/" className="">Service Center</a>
+                <a href="/" className="">OPPO Update</a>
+                <a href="/" className="">Terms and Conditions</a>
+                <a href="/" className="">E-waste Management</a>
+                <a href="/" className="">Security Response Center</a>
+                <a href="/" className="">Warranty Policy</a>
+                <a href="/" className="">Investor</a>
+              </div>
+              <div className="inline-grid grid-cols-1 gap-1 auto-rows-min">
+                <div className="font-semibold text-black mb-2 text-xl">About OPPO</div>
+                <a href="/" className="">Our Story</a>
+                <a href="/" className="">Technology</a>
+                <a href="/" className="">Newsroom</a>
+                <a href="/" className="">Campaign</a>
+                <a href="/" className="">Career</a>
+                <a href="/" className="">ColorOS</a>
+                <a href="/" className="">Store Locator</a>
+              </div>
+              <div className="inline-grid grid-cols-1 gap-1 auto-rows-min">
+                <div className="font-semibold text-black mb-2 text-xl">OPPO Community</div>
+                <a href="/" className="">OPPO Community</a>
+              </div>
+            </div>
+          </div>
+
+        </div> */}
+
+      </nav>
+
+      <div className="bgVideo absolute w-full h-[100dvh] top-0 left-0 z-[-1] overflow-hidden">
+
+        {/* <!-- <img src="./assets/bg1.jpg" alt="" className="h-full w-full"> --> */}
+        
+        <video className="min-w-full min-h-full absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2" autoPlay muted loop>
+          <source src={bgv} type="video/mp4" />
+        </video>
+      </div>
+
+
+      <div id="home" className=" flex h-[82dvh]  box-border w-full bg-transparent ">
+        <div className="space-y-[3dvh] ml-[30vw] mt-[20dvh]">
+          <div className="text-3xl text-white font-semibold">Find the perfect Vendor services for your business</div>
+          <form action="" className="bg-white h-[7dvh] flex items-center rounded w-fit">
+            <img src="./assets/search.png" alt="" className="h-[3.3dvh] m-[1.4dvh]" />
+            <input type="text" name="" id="" className="border-none outline-none text-base w-[27.2vw] px-[0.8vw]" placeholder='Search For Any Service ...' onMouseOver={focus} />
+            <input type="submit" className="bg-[#1dbf73] hover:bg-[#1db973] text-white self-stretch rounded-r px-[3vw] text-xs cursor-pointer transition-all" value="Search" />
+          </form>
+          <div className="text-white space-x-[0.5vw] text-base font-semibold">
+            <span className="">Popular:</span>
+            <button className="border-2 border-white rounded-2xl px-[0.7vw] hover:text-black hover:bg-white hover:scale-105 transition-all">Web Development</button>
+            <button className="border-2 border-white rounded-2xl px-[0.7vw] hover:text-black hover:bg-white hover:scale-105 transition-all">App Development</button>
+            <button className="border-2 border-white rounded-2xl px-[0.7vw] hover:text-black hover:bg-white hover:scale-105 transition-all">SEO</button>
+          </div>
+        </div>
+      </div>
+
+
+      <div className="flex h-[82dvh] flex-col px-[2vw] justify-center space-y-[4dvh] min-w-full" id="servic">
+        <div className="text-3xl font-semibold text-gray-700">Popular Services</div>
+        <div className="flex items-center justify-between text-white box-border ">
+
+          <a href="/" className="flex flex-col h-[52dvh] w-[17vw] pl-[0.7vw] pt-[1dvh] bg-[url('img/fa1.jpg')] bg-cover bg-center" >
+            <span className="">Website For Your Business</span>
+            <span className="text-xl font-semibold">Web Development</span>
+          </a>
+          <a href="/" className="flex flex-col h-[52dvh] w-[17vw] pl-[0.7vw] pt-[1dvh] bg-[url('img/fa2.jpg')] bg-cover bg-center" >
+            <span className="">App For Your Business</span>
+            <span className="text-xl font-semibold">App Development</span>
+          </a>
+          <a href="/" className="flex flex-col h-[52dvh] w-[17vw] pl-[0.7vw] pt-[1dvh] bg-[url('img/fa3.jpg')] bg-cover bg-center" >
+            <span className="">Unlock Your Growth Online</span>
+            <span className="text-xl font-semibold">SEO</span>
+          </a>
+          <a href="/" className="flex flex-col h-[52dvh] w-[17vw] pl-[0.7vw] pt-[1dvh] bg-[url('img/fa4.jpeg')] bg-cover bg-center " >
+            <span className="">Digital Marketing</span>
+            <span className="text-xl font-semibold">Digital Marketing</span>
+          </a>
+          <a href="/" className="flex flex-col h-[52dvh] w-[17vw] pl-[0.7vw] pt-[1dvh] bg-[url('img/fa5.jpg')] bg-cover bg-center" >
+            <span className="">Graphics For Your Videos</span>
+            <span className="text-xl font-semibold">Graphic Designer</span>
+          </a>
+
+        </div>
+      </div>
+
+
+      <div className="flex h-[82dvh] bg-[#0d084d] text-white px-[3vw] justify-between box-border items-center w-full">
+        <div className="flex flex-col space-y-[2.4dvh] w-[35vw] justify-center">
+          <span className="text-[32px]">MHSSCE SP</span>
+          <span className="text-[32px]">A solution designed for <span className="italic">Business</span></span>
+          <span className="text-[18px] w-[30vw]">Upgrade to a curated experience packed with tools and benefits, dedicated to businesses</span>
+          <div className=" flex flex-col space-y-[2dvh] pt-[3dvh] font-medium pb-[3dvh]">
+            <div className="flex items-center space-x-[1vw] text-[14px]">
+              <img src="./assets//img/check.png" alt="" className="h-[3.5dvh]" /><span className="">Connect to Vendor with proven business experience</span>
+            </div>
+            <div className="flex items-center space-x-[1vw] text-[14px]">
+              <img src="./assets//img/check.png" alt="" className="h-[3.5dvh]"/><span className="">Get matched with the perfect talent by a customer success manager</span>
+            </div>
+            <div className="flex items-center space-x-[1vw] text-[14px]">
+              <img src="./assets//img/check.png" alt="" className="h-[3.5dvh]" /><span className="">Manage teamwork and boost productivity with one powerful workspace</span>
+            </div>
+          </div>
+          <button className="self-start bg-slate-50 text-gray-500 font-semibold text-lg px-[2vw] py-[1.3dvh] rounded-md hover:text-gray-600 ">Learn More</button>
+        </div>
+
+        <img src="./assets/h2.jpg" alt="" className="w-[47vw] object-contain" />
+
+      </div>
+
+
+      <div id="mp" className=" h-[70dvh] px-[3vw] w-full">
+
+        <div className="text-2xl text-gray-600 font-semibold pt-[10dvh] pb-[6dvh]">Explore the Marketplace</div>
+
+        <div className="grid grid-cols-5 justify-items-center pb-[10dvh]">
+          <div className="h-[20.8dvh] w-[16.4vw] flex flex-col items-center justify-around py-[3.3dvh] [&:hover>img+div]:scale-x-150 [&:hover>img+div]:bg-[#1dbf73] cursor-pointer hover:shadow-lg transition-all duration-300">
+
+            <img src="./assets/fb1.svg" alt="" className="h-[7dvh] object-contain" />
+            <div className="h-[2.2px] w-[3.3vw] bg-[lightgray] transition-all duration-300 "></div>
+            <span className="text-base">Graphics and Design(Soon)</span>
+          </div>
+          <div className="h-[20.8dvh] w-[16.4vw] flex flex-col items-center justify-around py-[3.3dvh] [&:hover>img+div]:scale-x-150 [&:hover>img+div]:bg-[#1dbf73] cursor-pointer hover:shadow-lg transition-all duration-300">
+
+            <img src="./assets/fb2.svg" alt="" className="h-[7dvh] object-contain" />
+            <div className="h-[2.2px] w-[3.3vw] bg-[lightgray] transition-all duration-300 "></div>
+            <span className="text-base">Digital Marketing</span>
+          </div>
+          <div className="h-[20.8dvh] w-[16.4vw] flex flex-col items-center justify-around py-[3.3dvh] [&:hover>img+div]:scale-x-150 [&:hover>img+div]:bg-[#1dbf73] cursor-pointer hover:shadow-lg transition-all duration-300">
+
+            <img src="./assets/fb3.svg" alt="" className="h-[7dvh] object-contain" />
+            <div className="h-[2.2px] w-[3.3vw] bg-[lightgray] transition-all duration-300 "></div>
+            <span className="text-base">Writing & Translation(Soon)</span>
+          </div>
+          <div className="h-[20.8dvh] w-[16.4vw] flex flex-col items-center justify-around py-[3.3dvh] [&:hover>img+div]:scale-x-150 [&:hover>img+div]:bg-[#1dbf73] cursor-pointer hover:shadow-lg transition-all duration-300">
+
+            <img src="./assets/fb4.svg" alt="" className="h-[7dvh] object-contain" />
+            <div className="h-[2.2px] w-[3.3vw] bg-[lightgray] transition-all duration-300 "></div>
+            <span className="text-base">Video & Animation(Soon)</span>
+          </div>
+          <div className="h-[20.8dvh] w-[16.4vw] flex flex-col items-center justify-around py-[3.3dvh] [&:hover>img+div]:scale-x-150 [&:hover>img+div]:bg-[#1dbf73] cursor-pointer hover:shadow-lg transition-all duration-300">
+
+            <img src="./assets/fb5.svg" alt="" className="h-[7dvh] object-contain" />
+            <div className="h-[2.2px] w-[3.3vw] bg-[lightgray] transition-all duration-300 "></div>
+            <span className="text-base">Music & Audio(Soon)</span>
+          </div>
+          <div className="h-[20.8dvh] w-[16.4vw] flex flex-col items-center justify-around py-[3.3dvh] [&:hover>img+div]:scale-x-150 [&:hover>img+div]:bg-[#1dbf73] cursor-pointer hover:shadow-lg transition-all duration-300">
+
+            <img src="./assets/fb6.svg" alt="" className="h-[7dvh] object-contain" />
+            <div className="h-[2px] w-[3.3vw] bg-[lightgray] transition-all duration-300 "></div>
+            <span className="text-base">Web Development</span>
+          </div>
+          <div className="h-[20.8dvh] w-[16.4vw] flex flex-col items-center justify-around py-[3.3dvh] [&:hover>img+div]:scale-x-150 [&:hover>img+div]:bg-[#1dbf73] cursor-pointer hover:shadow-lg transition-all duration-300">
+
+            <img src="./assets/fb7.svg" alt="" className="h-[7dvh] object-contain" />
+            <div className="h-[2px] w-[3.3vw] bg-[lightgray] transition-all duration-300 "></div>
+            <span className="text-base">Business(Soon)</span>
+          </div>
+          <div className="h-[20.8dvh] w-[16.4vw] flex flex-col items-center justify-around py-[3.3dvh] [&:hover>img+div]:scale-x-150 [&:hover>img+div]:bg-[#1dbf73] cursor-pointer hover:shadow-lg transition-all duration-300">
+
+            <img src="./assets/fb8.svg" alt="" className="h-[7dvh] object-contain" />
+            <div className="h-[2px] w-[3.3vw] bg-[lightgray] transition-all duration-300 "></div>
+            <span className="text-base">Lifestyle(Soon)</span>
+          </div>
+          <div className="h-[20.8dvh] w-[16.4vw] flex flex-col items-center justify-around py-[3.3dvh] [&:hover>img+div]:scale-x-150 [&:hover>img+div]:bg-[#1dbf73] cursor-pointer hover:shadow-lg transition-all duration-300">
+
+            <img src="./assets/fb9.svg" alt="" className="h-[7dvh] object-contain" />
+            <div className="h-[2px] w-[3.3vw] bg-[lightgray] transition-all duration-300 "></div>
+            <span className="text-base">SEO</span>
+          </div>
+          <div className="h-[20.8dvh] w-[16.4vw] flex flex-col items-center justify-around py-[3.3dvh] [&:hover>img+div]:scale-x-150 [&:hover>img+div]:bg-[#1dbf73] cursor-pointer hover:shadow-lg transition-all duration-300">
+
+            <img src="./assets/fb10.svg" alt="" className="h-[7dvh] object-contain" />
+            <div className="h-[2px] w-[3.3vw] bg-[lightgray] transition-all duration-300 "></div>
+            <span className="text-base">Photography(Soon)</span>
+          </div>
+
+        </div>
+      </div>
+
+      {/* <div id="bgblur" className="bg-[rgba(0,0,0,0.4)] h-[100dvh] w-full z-[9] fixed top-0 hidden" onClick="clsjoin()"></div>
+
+      <div id="signup" className="flex overflow-hidden rounded-lg w-[65%] h-[90dvh] my-[5dvh] mx-[17.5%]  fixed z-[-7] top-0 opacity-0  -translate-y-1/2 transition-[opacity,transform] duration-1000">
+        <div className="w-1/2 flex" style="background:center/cover url('img/signbg.png'); ">
+          <div className="flex text-white flex-col h-[35%] justify-around ml-[8%] mt-[10%] w-[70%]">
+            <div className="text-3xl font-semibold">Sucess starts here</div>
+            <div className="flex items-baseline text-lg font-medium"><img src="./assets/greencheck.png" alt="" className="h-[2dvh] mr-[10px]"/>Over 600 Categories</div>
+            <div className="flex items-baseline text-lg font-medium"><img src="./assets/greencheck.png" alt="" className="h-[2dvh] mr-[10px]"/>Pay per project, not per hour</div>
+            <div className="flex items-baseline text-lg font-medium"><img src="./assets/greencheck.png" alt="" className="h-[2dvh] mr-[10px]"/>Access to talent and businesses across the globe</div>
+          </div>
+        </div>
+        <div className="w-1/2 bg-white h-full">
+
+          <div className=" flex-col box-border px-[4%] space-y-[15%]" style="display: flex;" id="join1">
+            <div className="text-2xl font-semibold mt-[16%] text-center" id="lg1">Create a new account</div>
+            <div className="flex flex-col space-y-[8%]">
+              <button className="flex items-center border border-solid py-[1.6dvh] rounded-md  hover:bg-gray-50"><img src="./assets/glogo.svg" alt="" className="h-[3dvh] pl-[7%] "/><div className="text-lg font-semibold -ml-[10%] text-center w-full">Continue with Google</div></button>
+              <button className="flex items-center border border-solid py-[1.6dvh] rounded-md  hover:bg-gray-50" onClick="cwemail()">
+                <img src="./assets/email.png" alt="" className="h-[3dvh] pl-[7%] " /><div className="text-lg font-semibold -ml-[10%] text-center w-full" id="lg2">Continue with Email</div></button>
+            </div>
+            <div className="text-base font-medium text-gray-600 text-center px-[5%] "> <span id="lg3">  Already have an account? </span><button className="text-black underline " onClick="loginToggle()" id="lg4">Sign In</button></div>
+          </div>
+
+
+
+          <div className="flex-col w-full px-[9%] py-[3dvh] bg-white h-full" style="display: none;" id="join2">
+            <button className="flex font-semibold items-center w-[12%] justify-between"><img src="./assets/back.svg" alt="" className="w-[2.5dvh] scale-x-[-1]" onClick="lgback()"/>Back</button>
+            <div className="text-2xl font-semibold my-[3dvh]" id="lb1">Continue with your Email</div>
+            <form action="" className="flex flex-col">
+              <label htmlFor="semail" className="text-xl font-semibold text-gray-800 mb-[1.5dvh]" id="lb2">Email</label>
+
+              <div className="border-2 border-solid rounded-md mb-[3dvh]">
+                <input type="email" className="outline-none text-lg px-[1vw] py-[0.9dvh]  rounded-md placeholder-gray-400  w-full " placeholder="name@email.com" autoComplete="email" />
+              </div>
+
+              <label htmlFor="spswrd" className="text-lg font-semibold text-gray-800 mb-[1.5dvh]">Password</label>
+              <div className="border-2 border-solid rounded-md mb-[3dvh]" >
+                <input type="password" className="outline-none text-base px-[1vw] py-[0.9dvh] rounded-md  w-full " />
+              </div>
+
+              <input type="submit" value="Continue" className="bg-gray-50 text-gray-300 text-lg rounded outline-none px-[1vw] py-[1dvh] mt-[1dvh]" />
+            </form>
+          </div>
+
+        </div>
+      </div> */}
+
+
+
+      <footer className="bg-black px-[2.7%] w-full">
+        <div className="font-sans grid grid-cols-6 justify-items-center font-semibold text-[color:rgba(255,255,255,0.55)] py-10">
+          <div className="inline-grid grid-cols-1 gap-1 ">
+            <div className="text-white mb-2 text-lg">Smartphones</div>
+            <a href="/" className="hover:text-white">OPPO Find N2 Flip</a>
+            <a href="/" className="hover:text-white">OPPO Reno8 T 5G</a>
+            <a href="/" className="hover:text-white">OPPO Reno8 Pro 5G</a>
+            <a href="/" className="hover:text-white">OPPO Reno8 5G</a>
+            <a href="/" className="hover:text-white">OPPO F23 5G</a>
+            <a href="/" className="hover:text-white">OPPO F21s Pro 5G</a>
+            <a href="/" className="hover:text-white">OPPO F21s Pro</a>
+            <a href="/" className="hover:text-white">See All Smartphones</a>
+          </div>
+          <div className="inline-grid grid-cols-1 gap-1">
+            <div className="text-white mb-2 text-lg">IoT Products</div>
+            <a href="/" className="hover:text-white">OPPO Pad Air</a>
+            <a href="/" className="hover:text-white">OPPO Enco Air3</a>
+            <a href="/" className="hover:text-white">OPPO Enco Buds2</a>
+            <a href="/" className="hover:text-white">OPPO Enco X2</a>
+            <a href="/" className="hover:text-white">OPPO Enco Air2 Pro</a>
+            <a href="/" className="hover:text-white">OPPO Enco Air2</a>
+            <a href="/" className="hover:text-white">OPPO Watch Free</a>
+            <a href="/" className="hover:text-white">OPPO Band Style</a>
+          </div>
+          <div className="inline-grid grid-cols-1 gap-1 auto-rows-min">
+            <div className="text-white mb-2 text-lg">Special Offers</div>
+            <a href="/" className="hover:text-white">Education Discount</a>
+            <a href="/" className="hover:text-white">Strike a Bargain</a>
+
+          </div>
+          <div className="inline-grid grid-cols-1 gap-1">
+            <div className="text-white mb-2 text-lg">Support</div>
+            <a href="/" className="hover:text-white">Contact Us</a>
+            <a href="/" className="hover:text-white">Service Center</a>
+            <a href="/" className="hover:text-white">OPPO Update</a>
+            <a href="/" className="hover:text-white">Terms and Conditions</a>
+            <a href="/" className="hover:text-white">E-waste Management</a>
+            <a href="/" className="hover:text-white">Security Response Center</a>
+            <a href="/" className="hover:text-white">Warranty Policy</a>
+            <a href="/" className="hover:text-white">Investor</a>
+          </div>
+          <div className="inline-grid grid-cols-1 gap-1 auto-rows-min">
+            <div className="text-white mb-2 text-lg">About OPPO</div>
+            <a href="/" className="hover:text-white">Our Story</a>
+            <a href="/" className="hover:text-white">Technology</a>
+            <a href="/" className="hover:text-white">Newsroom</a>
+            <a href="/" className="hover:text-white">Campaign</a>
+            <a href="/" className="hover:text-white">Career</a>
+            <a href="/" className="hover:text-white">ColorOS</a>
+            <a href="/" className="hover:text-white">Store Locator</a>
+          </div>
+          <div className="inline-grid grid-cols-1 gap-1 auto-rows-min">
+            <div className="text-white mb-2 text-lg">OPPO Community</div>
+            <a href="/" className="hover:text-white">OPPO Community</a>
+          </div>
+        </div>
+        <hr className="w-[95%] m-auto border-[color:rgba(255,255,255,0.55)]" />
+        <div className="flex py-8 px-8 justify-between items-center hover:text-white">
+          <a href="/" className="flex items-center space-x-4">
+            <button className="border border-[color:rgba(255,255,255,0.55)] p-1 rounded-full"><img src="./assets//robot.png" alt="" className="h-8" /></button>
+            <span className="text-white text-xl h-fit">Get Support From OPPO</span>
+          </a>
+          <div className="space-x-4 flex items-center">
+            <div className="space-x-2">
+              <a href="/"><i className="fab fa-facebook text-[25px] text-[color:rgba(255,255,255,0.55)] bg-black hover:text-white"></i></a>
+              <a href="/"><i className="fab fa-instagram text-[25px] text-[color:rgba(255,255,255,0.55)] bg-black hover:text-white"></i></a>
+              <a href="/"><i className="fab fa-twitter text-[25px] text-[color:rgba(255,255,255,0.55)] bg-black hover:text-white"></i></a>
+              <a href="/" className=""><i className="fab fa-youtube text-[25px] text-[color:rgba(255,255,255,0.55)] bg-black hover:text-white"></i></a>
+            </div>
+            <a href="/" className="text-white underline underline-offset-1">India (English)</a>
+          </div>
+        </div>
+        <hr className="w-[95%] m-auto border-[color:rgba(255,255,255,0.55)]" />
+        <div className="flex text-[color:rgba(255,255,255,0.55)] text-xs font-semibold px-8 py-10 items-center justify-between">
+          <div className="space-x-8">
+
+
+            <a href="/" className="hover:text-white">Privacy</a>
+            <a href="/" className="hover:text-white">Terms of Use</a>
+            <a href="/" className="hover:text-white">Terms of Sales</a>
+            <a href="/" className="hover:text-white">Cookies</a>
+            <a href="/" className="hover:text-white">Legal & Compliance</a>
+            <a>Copyright © 2004-2023 OPPO. All rights reserved.</a>
+          </div>
+          <a href="#" className="text-base hover:text-white">Back To Top</a>
+        </div>
+      </footer>
+    </div>
+  )
+}
+
+export default App
+
+
+<section className="flex min-h-[100dvh] h-max flex-col justify-center w-full" id="categories">
+            <div className="title text-3xl text-center">Categories</div>
+            <div className="cards grid grid-cols-[repeat(auto-fit,minmax(14rem,1fr))] w-full px-[7%] gap-x-[5vw] gap-y-[10dvh]">
+                <a href="" className="card aspect-[12/13] flex flex-col items-center justify-evenly rounded-2xl text-2xl " style={{ 'boxShadow': '1px 5px 10px -1px rgba(0, 0, 0, 0.404)' }}>
+                    <div className='h-[40%] w-full flex items-center justify-center'>
+                    <img src={fish} alt="" className='object-cover h-full' />
+                    </div>
+                    <div>Fish</div>
+                </a>
+                <a href="" className="card aspect-[12/13] flex flex-col items-center justify-evenly rounded-2xl text-2xl " style={{ 'boxShadow': '1px 5px 10px -1px rgba(0, 0, 0, 0.404)' }}>
+                    <div className='h-[40%] w-full flex items-center justify-center'>
+                    <img src={fish} alt="" className='object-cover h-full' />
+                    </div>
+                    <div>Fish</div>
+                </a>
+                <a href="" className="card aspect-[12/13] flex flex-col items-center justify-evenly rounded-2xl text-2xl " style={{ 'boxShadow': '1px 5px 10px -1px rgba(0, 0, 0, 0.404)' }}>
+                    <div className='h-[40%] w-full flex items-center justify-center'>
+                    <img src={fish} alt="" className='object-cover h-full' />
+                    </div>
+                    <div>Fish</div>
+                </a>
+                <a href="" className="card aspect-[12/13] flex flex-col items-center justify-evenly rounded-2xl text-2xl " style={{ 'boxShadow': '1px 5px 10px -1px rgba(0, 0, 0, 0.404)' }}>
+                    <div className='h-[40%] w-full flex items-center justify-center'>
+                    <img src={fish} alt="" className='object-cover h-full' />
+                    </div>
+                    <div>Fish</div>
+                </a>
+
+            </div>
+        </section>
